@@ -1,2 +1,4 @@
 *.csv
 *.md
+*.pdf
+/documentation
