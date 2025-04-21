@@ -1,0 +1,161 @@
+<html><head>
+    <title>eLCA</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-language" content="en">
+    <meta name="description" content="eLCA | Online LCA tool for the administration building - The eLCA online tool can be used to generate building LCAs on the basis of building element templates. The aim of the research project was to use this online tool to develop building element templates and building LCAs.">
+    <meta name="keywords" content="LCA, administration building, LCA data, Life Cycle Assessment, DIN 276, BMVBS, BBSR, Ökobau.dat building materials database, Ökobau.dat, building materials database, Zukunft Bau research initiative, the Federal Institute for Research on Building, Urban Affairs and Spatial Development ">
+    <meta name="robots" content="index, follow">
+
+    <!--<link rel="stylesheet" type="text/css" href="/css/elca/elca.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="/css/elca/print.css" media="all"/> -->
+
+    <script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/d3.v3/d3.v3.min.js"></script>
+    <!-- <script type="text/javascript" src="/js/elca/elca.min.js"></script> -->
+
+    <link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" media="all" href="/css/elca/elca.css?1.8.2"><link rel="stylesheet" type="text/css" media="print" href="/css/elca/print.css?1.8.2"><link rel="stylesheet" type="text/css" media="all" href="/css/stlb/stlb.css?1.8.2"><link rel="stylesheet" type="text/css" media="all" href="/css/lcc/lcc.css?1.8.2"><link rel="stylesheet" type="text/css" media="all" href="/css/bnb/bnb.css?1.8.2"><link rel="stylesheet" type="text/css" media="all" href="/css/soda4lca/soda4lca.css?1.8.2"><link rel="stylesheet" type="text/css" media="all" href="/css/importAssistant/import_assistant.css?1.8.2"><link rel="stylesheet" type="text/css" media="all" href="/css/nawoh/nawoh.css?1.8.2"><link rel="stylesheet" type="text/css" media="all" href="/css/ifcViewer/ifcViewer.css?1.8.2"><script type="text/javascript" src="/js/elca/elca.min.js?1.8.2"></script>
+<script type="text/javascript" src="/js/stlb/stlb.min.js?1.8.2"></script>
+<script type="text/javascript" src="/js/lcc/lcc.min.js?1.8.2"></script>
+<script type="text/javascript" src="/js/bnb/bnb.min.js?1.8.2"></script>
+<script type="text/javascript" src="/js/soda4lca/soda4lca.min.js?1.8.2"></script>
+<script type="text/javascript" src="/js/importAssistant/import_assistant.min.js?1.8.2"></script>
+<script type="text/javascript" src="/js/nawoh/nawoh.min.js?1.8.2"></script>
+<script type="text/javascript" src="/js/ifcViewer/ifcViewer.min.js?1.8.2"></script>
+</head>
+
+<body class="" style="">
+<div id="outer">
+    <div id="header">
+        <div id="bmub"><img src="/img/elca/elca_logo.png" width="73" height="73" alt=""></div>
+        <div class="layout-width">
+            <h1 class="logo"><a href="/" class="no-xhr">eLCA</a> <a href="/index/versions/" class="no-xhr"><span class="elca-version">v0.9.7</span></a></h1>
+            <ul id="meta" class="clearfix">
+  <li><a class="no-xhr" href="/accessibility/">Accessibility</a></li>
+  <li>|</li>
+  <li><a class="no-xhr" href="/imprint/">imprint</a></li>
+  <li>|</li>
+  <li><a class="no-xhr" href="/privacy/">Datenschutz</a></li>
+  <li>|</li>
+  <li><a class="no-xhr" href="/information/">information</a></li>  
+<li>|</li><li><a href="/login/" class="no-xhr">Log In</a></li></ul>
+        </div>
+    </div>
+
+    <div id="navTopWrapper">
+    <div class="layout-width">
+
+    <ul id="navTop"><li class="first"><a href="/projects/" class="no-xhr">Projects</a></li><li><a href="/elements/" class="no-xhr">Building element templates</a></li><li><a href="/processes/" class="no-xhr">Building materials</a></li></ul><ul id="languageChooser"><li><a class="no-xhr" href="/login/lang/?lang=de">de</a></li><li>|</li><li class="active"><a class="no-xhr" href="/login/lang/?lang=en">en</a></li><li>|</li><li><a class="no-xhr" href="/login/lang/?lang=es">es</a></li></ul></div>
+<div class="clear"></div></div>
+    <div id="inner">
+        
+
+        <div class="main-content ">
+            
+            <div id="main" class="full">
+                <div id="osit"></div>
+                <div id="content">
+  <div id="elcaLogin" class="elca-login">
+
+    <div class="disclaimer">
+      <div class="disclaimer-content-wrapper">
+
+
+   <h1>Terms eLCA in beta</h1>
+    <h2>Please keep in mind that ELCA is currently in a beta stage.</h2>
+
+    <p>The ELCA login information may not be disclosed. <br>
+        Publications are permitted only with approval of the BBSR. <br>
+        The product is in beta. Please report Identified errors.</p>
+
+    <p class="important">Deposits into eLCA component templates are configured exclusively for the scope of the LCA exemplary constructions.
+        The component templates are pre-use check-intensive.
+        The component templates used must be adapted to each project to the specific circumstances.</p>
+
+    <p>Participants of the expanded beta
+        be asked to gain insights on the following points.
+    </p>
+    <h3>Verification:</h3>
+    <ul>
+        <li>the calculation results</li>
+        <li>the stored useful lives</li>
+        <li>the deposited bulk densities</li>
+        <li>the stored conversion factors</li>
+    </ul>
+
+    <p>
+        Furthermore, they may like you create high-quality component templates
+        submit for publication in the System.</p>
+
+    <h2>Terms of Use</h2>
+    <p>
+        All recorded data can be scientifically evaluated by the BBSR.
+        The evaluations are not project sharp and do not allow conclusions to be drawn
+        individual projects. The evaluated data will be proportionately in totals
+        and serve the formation of average values.
+    </p>
+    <h3>The evaluated projects serve the</h3>
+    <ul>
+
+        <li> formation of average values </li>
+        <li> Derivation of benchmarks </li>
+        <li> Identification of priorities and action areas </li>
+    </ul>
+
+    <p>It is planned through regular publications, the findings
+        to provide to the general public.</p>
+</div>
+    </div>
+
+    <div class="login-wrapper">
+      
+
+      <div class="login-form-container"><form name="loginform" action="/login/" method="POST" class="xhr loginform" accept-charset="utf-8"><input type="hidden" name="origin" value="/elements/list/?t=246"><div class="fieldset"><fieldset><div class="legend">log In</div><div class="form-section HtmlTextInput-section authName"><div class="label-holder"><label for="z79aa3890fc5121f6e83e68ae419861b8"><span class="label-content">User name</span><span class="required">*</span></label></div><div class="form-elt element-div HtmlTextInput"><input type="text" name="authName" value="" id="z79aa3890fc5121f6e83e68ae419861b8"></div></div><div class="form-section HtmlPasswordInput-section authKey"><div class="label-holder"><label for="od97085e1bbecc5be34a55a57d8752596"><span class="label-content">Password</span><span class="required">*</span></label></div><div class="form-elt element-div HtmlPasswordInput"><input type="password" name="authKey" value="" id="od97085e1bbecc5be34a55a57d8752596"></div></div></fieldset></div><div class="fieldset"><fieldset><p class="notice">Mit dem Absenden erklären Sie sich mit den nebenstehenden Nutzungsbedingungen und der aktuellen <a href="/privacy/" target="_blank" class="page no-xhr">Datenschutzvereinbarung</a><span> einverstanden.</span></p><input type="submit" name="login" value="send" class="submit button"></fieldset></div></form></div>
+
+      <div id="subscribeForm" class="subscribe-form-container">
+        <h1>apply for access</h1>
+      </div>
+      <div id="forgotForm" class="forgot-form-container">
+        <h1>reset password</h1>
+      </div>
+      <p class="notice login-only"><br>If you have forgotten your login information, please follow this link to reset your password.
+        <br><a href="/forgot/">Forgot Password</a><br><br>
+      </p>
+      <p class="notice login-only">If you have not yet registered to use of eLCA, you may request an eLCA account here.
+        <br>
+        <a href="/subscribe/">apply for access</a>
+      </p>
+
+    </div>
+  </div>
+  <div class="bbsr-logo"><img src="/img/elca/bbsr_logo_en.svg" alt=""></div>
+</div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</div>
+
+<!-- <include name="i18n/notice_$$locale$$" /> //-->                                        
+<!-- message info box -->
+<div id="msgBox"></div>
+<div id="elca-modal">
+  <div id="elca-modal-box">
+    <div id="elca-modal-content"></div>
+  </div>
+</div>
+
+<div id="loading"></div>
+<p id="progress"></p>
+
+<noscript>
+    <div id="noscript-message">
+        <p>eLCA requires Javascript. Please enable javascript in your browser.</p>
+    </div>
+</noscript>
+
+<span id="diagramsLoading">Diagrams are being loaded</span>
+
+
+
+</body></html>
