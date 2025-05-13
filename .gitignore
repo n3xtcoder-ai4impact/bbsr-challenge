@@ -1,6 +1,7 @@
-*.csv
+
 *.md
 *.pdf
 /documentation
 *.png
 *.joblib
+/csv
