@@ -1,0 +1,13 @@
+pandas
+numpy
+scikit-learn
+seaborn
+joblib
+requests
+chardet
+datetime
+re
+selenium
+bs4
+deep-translator
+rapidfuzz
