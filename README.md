@@ -1,10 +1,10 @@
-# 🧪 Pollutant Prediction in Construction Materials
+# Pollutant Prediction in Construction Materials
 
 This project builds a machine learning system to predict **pollutant classifications** in building materials based on ÖKOBAUDAT data, material roles, and end-of-life scenarios. It supports more efficient sustainability assessments and helps automate pollutant detection for circular construction tools.
 
 ---
 
-## 🧩 Problem Statement
+## Problem Statement
 
 Current sustainability assessments rely on manual inputs to determine which pollutants (e.g., adhesives, coatings, fire retardants) are present in construction materials. This process is:
 - Time-consuming
@@ -15,7 +15,7 @@ Our solution: A trained model that **automatically predicts pollutant presence**
 
 ---
 
-## 🔍 Objectives
+## Objectives
 
 - Predict `Störstoffklasse` (pollutant classes: S0–S4)
 - Suggest likely **contaminant terms** using text mining
@@ -24,7 +24,7 @@ Our solution: A trained model that **automatically predicts pollutant presence**
 
 ---
 
-## 📦 Datasets
+## Datasets
 
 This project works with multiple datasets related to construction materials and pollutants:
 
@@ -45,14 +45,38 @@ This project works with multiple datasets related to construction materials and 
 
 Processed and cleaned versions are stored in `data/processed/`:
 
-- `pollutant_labeled_obd_translated.csv` — Translated and cleaned pollutant-labeled data
+- `pollutant_labeled_obd_translated.csv` — Maps materials from OBD to pollutants, translated and cleaned 
 - `tbs_deduped.csv` — Deduplicated TBS materials with inferred roles
-- `all_uuid_materials_from_components.csv`: scraped data from [bauteileditor.de](https://bauteileditor.de). Maps building components (for example, wall) with construction materials
+- `all_uuid_materials_from_components.csv` | Material to building component mapping scraped from bauteileditor.de
 
+## Data Pipeline
+
+The system combines multiple preprocessing and data enrichment steps:
+
+### 1. Web Scraping
+To enrich the pollutant predictions with real-world material combinations, we scraped material-component mappings from [bauteileditor.de](https://www.bauteileditor.de/).
+
+The scraping process:
+- Authenticates using session cookies
+- Navigates through all component categories and subcategories
+- Extracts material UUIDs, names, and the building components where is found
+- Outputs: `all_uuid_materials_from_components.csv`
+
+This dynamic mapping allows us to **infer which materials are used together** and simulate realistic pollutant exposure scenarios.
+
+### 2. Fuzzy Matching & Label Bootstrapping
+- Bootstrapped weak labels by fuzzy matching `eolCategoryName` with known OBD-labeled entries
+- Used `rapidfuzz` with token-based similarity
+- Kept matches with validated semantic closeness
+
+### 3. Feature Engineering
+- Inferred material roles (`adhesive`, `sealant`, `coating`, etc.)
+- Created subroles (e.g. `vapor_barrier` vs. `roofing_sealant`)
+- One-hot encoded categorical inputs (EOL scenarios, tech factor, etc.)
 
 ---
 
-## 🧠 Model Pipeline
+## Model Pipeline
 
 ### 1. `build_features.py`
 - Loads datasets
@@ -74,7 +98,7 @@ Processed and cleaned versions are stored in `data/processed/`:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 bbsr-challenge/
@@ -98,7 +122,7 @@ bbsr-challenge/
 
 ---
 
-## 📊 Example Outputs
+## Example Outputs
 
 ### Model Performance
 ![Performance](results/figures/performance_barplot.png)
