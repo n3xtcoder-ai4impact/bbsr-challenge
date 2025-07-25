@@ -82,7 +82,7 @@ bbsr-challenge/
 ## 📊 Example Outputs
 
 ### Model Performance
-![Performance](FIGURES_DIR/performance_barplot.png)
+![Performance](results/figures/performance_barplot.png)
 
 ### Predicted Label Distribution
 ![Label Distribution](results/figures/label_distribution.png)
