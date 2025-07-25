@@ -35,11 +35,7 @@ This project works with multiple datasets related to construction materials and 
     - `OBD_2023_I.csv`
     - `OBD_2020_II.csv`
 - `tBaustoff_with_OBD_mapping.csv` — Provides material mapping information with 10 columns. It connects to the ÖKOBAUDAT dataset through process UUIDs and contains end-of-life scenario information for various materials.
-- `pollutant_combinations.csv`- contains:
-    - Building Materials: Various construction materials (concrete, wood, insulation, etc.)
-    - Disturbing Substances: Descriptions of potential contaminants or foreign materials
-    - Disturbance Classes: Classification from S0 (no disturbance) to S4 (highly problematic)
-    - This dataset helps assess how different material combinations affect recycling potential and environmental impact, which is crucial for circular construction practices.
+- `pollutant_combinations.csv`-helps assess how different material combinations affect recycling potential and environmental impact, which is crucial for circular construction practices.
 
 ### Processed Datasets
 
@@ -47,7 +43,7 @@ Processed and cleaned versions are stored in `data/processed/`:
 
 - `pollutant_labeled_obd_translated.csv` — Maps materials from OBD to pollutants, translated and cleaned 
 - `tbs_deduped.csv` — Deduplicated TBS materials with inferred roles
-- `all_uuid_materials_from_components.csv` | Material to building component mapping scraped from bauteileditor.de
+- `all_uuid_materials_from_components.csv` |  Maps building components (for example, wall) with construction materials
 
 ## Data Pipeline
 
@@ -178,7 +174,8 @@ make visualize
 
 # Do it all
 make all
-
+```
+---
 
 ## 📈 Performance (Test Set)
 
