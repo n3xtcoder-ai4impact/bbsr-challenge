@@ -2,7 +2,6 @@
 *.md
 *.pdf
 /documentation
-*.png
 *.joblib
 /csv
 *.env
