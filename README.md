@@ -24,12 +24,41 @@ Our solution: A trained model that **automatically predicts pollutant presence**
 
 ---
 
-## 🧱 Dataset
+## 📦 Datasets
 
-- `pollutant_labeled_obd.csv`: bootstrapped multi-label pollutant annotations
-- `tBaustoff_with_OBD_mapping.csv`: technical building materials
-- `all_uuid_materials_from_components.csv`: links materials to components
-- Manual + scraped data from [bauteileditor.de](https://bauteileditor.de)
+This project works with multiple datasets related to construction materials and pollutants:
+
+### 🔹 Raw Input Files
+
+-  The ÖKOBAUDAT contains life cycle assessment (LCA) data on building materials, construction, transport, energy, and disposal processes. Three versions are provided:
+    - `OBD_2024_I.csv`
+    - `OBD_2023_I.csv`
+    - `OBD_2020_II.csv`
+
+***Notes on ÖKOBAUDAT Data:***
+
+Each dataset contains environmental impact indicators organized by lifecycle phases
+Material entries include detailed technical specifications and reference quantities
+Data follows standardized categories based on international norms (EN 15804)
+UUID identifiers ensure consistent referencing across different datasets
+
+- `tBaustoff_with_OBD_mapping.csv` — Provides material mapping information with 10 columns. It connects to the ÖKOBAUDAT dataset through process UUIDs and contains end-of-life scenario information for various materials.
+
+- `pollutant_combinations.csv`- contains:
+    - Building Materials: Various construction materials (concrete, wood, insulation, etc.)
+    - Disturbing Substances: Descriptions of potential contaminants or foreign materials
+    - Disturbance Classes: Classification from S0 (no disturbance) to S4 (highly problematic)
+    - This dataset helps assess how different material combinations affect recycling potential and environmental impact, which is crucial for circular construction practices.
+
+
+### 🔹 Processed Datasets
+
+Processed and cleaned versions are stored in `data/processed/`:
+
+- `pollutant_labeled_obd_translated.csv` — Translated and cleaned pollutant-labeled data
+- `tbs_deduped.csv` — Deduplicated TBS materials with inferred roles
+- `all_uuid_materials_from_components.csv`: scraped data from [bauteileditor.de](https://bauteileditor.de). Maps building components (for example, wall) with construction materials
+
 
 ---
 
