@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: pollutant_predictor
+Version: 0.1.0
+Summary: A model to predict environmental pollutants in construction materials
+Author: Your Name
+Requires-Dist: pandas>=1.0
+Requires-Dist: scikit-learn>=1.0
