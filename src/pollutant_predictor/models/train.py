@@ -33,3 +33,4 @@ def train_model(X_train, y_train, model_type="random_forest", save_path: Path = 
 
     return model
 
+

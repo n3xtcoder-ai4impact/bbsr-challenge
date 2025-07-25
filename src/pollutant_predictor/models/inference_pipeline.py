@@ -1,5 +1,10 @@
 import pandas as pd
 from sklearn.metrics import classification_report
+from pathlib import Path
+import joblib
+
+model_path = Path("models/pollutant_model.joblib")
+model = joblib.load(model_path)
 
 def predict_with_thresholds(model, X_test, y_test, thresholds: dict):
     """
@@ -112,3 +117,4 @@ def blend_predictions_with_components(pred_df, uuid_map, uuid_col="UUID", compon
         blended[f"{col}_adjusted"] = 0.7 * blended[f"{col}_mat"] + 0.3 * blended[f"{col}_comp"]
 
     return blended
+

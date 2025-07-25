@@ -3,7 +3,10 @@ from pollutant_predictor.models.train import train_model
 from pollutant_predictor.models.inference_pipeline import predict_with_thresholds
 from pollutant_predictor.config.paths import PROCESSED_DIR
 import pandas as pd
+from pathlib import Path
+from pollutant_predictor.training.train import train_model
 
+# This script orchestrates the training and evaluation of a pollutant classification model.
 def main():
     import os
     os.makedirs("results", exist_ok=True)
@@ -25,6 +28,9 @@ def main():
     report_df.to_csv("results/classification_report.csv")
     proba_df.to_csv("results/test_probabilities.csv", index=False)
     binary_preds.to_csv("results/test_predictions.csv", index=False)
+
+    model_save_path = Path("models/pollutant_model.joblib")
+    model = train_model(X_train, y_train, save_path=model_save_path)
 
 if __name__ == "__main__":
     main()
