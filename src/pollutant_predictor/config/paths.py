@@ -16,4 +16,6 @@ RAW_DIR = get_project_path("data", "raw")
 INTERIM_DIR = get_project_path("data", "interim")
 PROCESSED_DIR = get_project_path("data", "processed")
 MODELS_DIR = get_project_path("models")
+RESULTS_DIR = get_project_path("results")
+FIGURES_DIR = get_project_path("results", "figures")
 
